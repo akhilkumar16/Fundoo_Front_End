@@ -1,0 +1,65 @@
+<div class="container">
+  <mat-card>
+          <div class="innerContainer">
+              <div class="fundooWord">
+                  <span>
+                      <span class="blueColor fundooFont">F</span>
+                      <span class="redColor fundooFont">u</span>
+                      <span class="orangeColor fundooFont">n</span>
+                      <span class="blueColor fundooFont">d</span>
+                      <span class="greenColor fundooFont">o</span>
+                      <span class="redColor fundooFont">o</span>
+                  </span>
+              </div>
+          </div>
+              <div class="createLine">
+                  <h1>
+                      Create your Fundoo Account
+                  </h1>
+              </div>
+              <div class="FirstLastName">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput FirstName="FirstName">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput LastName="LastName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="userName">
+              <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput UserName="UserName">
+                <mat-icon matSuffix>@gmail.com</mat-icon>
+                <mat-hint>Use mix of letters, numbers & Symbols</mat-hint>
+              </mat-form-field>
+              <div class="text">
+              <p>
+                  Use my current email address instead
+              </p>          
+              </div>
+          </div>
+          <div class="password">
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput password="password">
+                <mat-hint>Use with a mix of letters, numbers & Symbols</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm</mat-label>
+                <input matInput Confirm="Confirm">
+              </mat-form-field>    
+            </div>
+        </div>
+        <p>
+          Sign in instead
+      </p>      
+        <div>
+          <button mat-button>Next</button> 
+        </div>
+  </mat-card>
+</div>
