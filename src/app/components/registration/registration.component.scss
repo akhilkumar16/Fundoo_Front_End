@@ -37,6 +37,11 @@
             display: flex;
             justify-content: space-between;
         }
+        .image{
+            float :left;
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 .fundooFont{
@@ -75,6 +80,9 @@
     .firstLastName{
         width: auto !important;
         display: inline !important;
+    }
+    .widthFormField{
+        width: 100% !important;
     }
     .password{
         display: inline !important;

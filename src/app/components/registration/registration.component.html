@@ -1,5 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
 <div class="container">
   <mat-card>
+    <div class ="Form container">
           <div class="innerContainer">
               <div class="fundooWord">
                   <span>
@@ -47,19 +55,31 @@
               <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput password="password">
-                <mat-hint>Use with a mix of letters, numbers & Symbols</mat-hint>
+                <mat-hint>Use a mix of letters, numbers & Symbols</mat-hint>
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <mat-label>Confirm</mat-label>
                 <input matInput Confirm="Confirm">
               </mat-form-field>    
+              <div class = "checkbox">
+              <section class="example-section">
+                <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+              </section>
+              </div>
             </div>
         </div>
-        <p>
-          Sign in instead
-      </p>      
-        <div>
-          <button mat-button>Next</button> 
-        </div>
+        <section>
+          <div class="example-button-row">
+            <button mat-flat-button>Sign in instead</button>
+            <button mat-button>Next</button> 
+          </div>
+        </section>
+    </div >
+    <div class = "image">
+      <img src="assets/icon.svg"
+      width="250" 
+     height="250">
+      <p>One account. All of Google working for you.</p>
+    </div>
   </mat-card>
 </div>
