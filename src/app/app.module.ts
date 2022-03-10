@@ -14,12 +14,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './components/login/login.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotpasswordComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,
