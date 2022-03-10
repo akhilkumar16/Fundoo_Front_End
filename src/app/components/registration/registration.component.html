@@ -1,6 +1,6 @@
 <div fxFlex=100 fxLayout="row" fxLayoutAlign="center center" style = "width :100vw;height:100vh">
-  <mat-card fxFlex=60>
-    <form fxLayout="row" fxLayoutGap="20px">
+  <mat-card fxFlex=50>
+    <div fxLayout="row" fxLayoutGap="20px">
       <div fxLayout="column">
         <div>
           <h1>
@@ -32,6 +32,13 @@
               <mat-hint>Alphanumeric with symbols</mat-hint>
             </mat-form-field>
           </div>
+          <div>
+            <button mat-flat-button>
+            <h5 style="color:#008cff;">
+            <b>use my current email instead</b>
+            </h5>
+            </button>
+          </div>
         </div>
         <div fxLayoutGap=20px>
           <mat-form-field appearance="outline">
@@ -48,8 +55,8 @@
         <div fxLayout="row">
           <div fxLayoutGap=250px>
           <button mat-flat-button>
-            <h5 style="color:#001aff;">
-              Sign in instead
+            <h5 style="color:#008cff;">
+              <b>Sign in instead</b>
             </h5>
             </button>
           <button mat-raised-button color="primary">Next</button>
@@ -62,6 +69,6 @@
           One Account.All of Google working for you
         </div>
       </div>
-    </form>
+    </div>
   </mat-card>
 </div>
