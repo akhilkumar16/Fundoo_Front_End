@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card >
+        <div fxLayout="column">
+            <div>
+                <h1 style="color:#001aff;">
+                    Fundoo
+                </h1>
+                <h2>
+                    Sign in
+                    <h3>
+                        Use Your Google Account
+                    </h3>
+                </h2>
+                <div fxLayoutGap=20px>
+                    <mat-form-field appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input matInput UserName="UserName">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput enterpassword="enterpassword">
+                    </mat-form-field>
+                </div>
+                <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+                <div fxLayout="row">
+                    <button mat-flat-button>
+                        <h5 style="color:#001aff;">
+                            create account<br>
+                        </h5>
+                    </button>
+                </div>
+                <div fxLayout="row" >
+                    <div fxLayoutGap=200px>
+                    <button mat-flat-button>Forgot password?</button>
+                    <button mat-raised-button color="primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
