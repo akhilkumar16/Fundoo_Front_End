@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-changepassword',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangepasswordComponent implements OnInit {
 
-  constructor() { }
+  resetForm!: FormGroup;
+  submitted = false;
 
-  ngOnInit(): void {
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.resetForm = this.formBuilder.group({
+      Password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
-
+  onchangeSubmit() {
+    if (this.resetForm.valid) {
+      console.log(this.resetForm.value);
+    }
+    else
+      console.log("form is not valid fill form correctly")
+    }
 }
+

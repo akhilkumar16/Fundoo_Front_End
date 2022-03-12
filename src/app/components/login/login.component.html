@@ -1,53 +1,62 @@
-<div fxLayout="row" fxLayoutAlign="center center" style="width :100vw;height:100vh">
-    <mat-card>
-        <div fxLayout="column" fxLayoutAlign="center center">
-            <div>
-                <h1 fxLayoutAlign="center">
-                    <span style="color:hsl(249, 100%, 50%)">F</span>
-                    <span style="color:hsl(345, 79%, 49%)">u</span>
-                    <span style="color:rgb(221, 224, 28)">n</span>
-                    <span style="color:#2812f1">d</span>
-                    <span style="color:hsl(135, 92%, 39%)">o</span>
-                    <span style="color:#FF0066">o</span>
-                </h1>
-                <h2 fxLayoutAlign="center">
-                    Sign in
-                </h2>
-                <h3 fxLayoutAlign="center">
-                    Use Your Fundoo Account
-                </h3>
-                <div fxLayoutGap=20px fxLayout="column"> 
-                    <mat-form-field appearance="outline">
-                        <mat-label>UserName</mat-label>
-                        <input matInput UserName="UserName">
-                    </mat-form-field>
-                </div>
-                <div fxLayout="column">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Enter your password</mat-label>
-                        <input matInput enterpassword="enterpassword">
-                    </mat-form-field>
-                </div>
-                <mat-checkbox class="example-margin">Show Password</mat-checkbox>
-                <div fxLayout="row">
-                    <button mat-flat-button routerLink="/registration">
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <div>
+            <h1 class="header">
+                <span style="color:hsl(249, 100%, 50%)">F</span>
+                <span style="color:hsl(345, 79%, 49%)">u</span>
+                <span style="color:rgb(221, 224, 28)">n</span>
+                <span style="color:#2812f1">d</span>
+                <span style="color:hsl(135, 92%, 39%)">o</span>
+                <span style="color:#FF0066">o</span>
+            </h1>
+            <p class="h1"><b>Sign In</b></p>
+        </div>
+        <div class="h2">
+            <p><b>contine to Fundoo</b></p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onloginSubmit()">
+            <form1 fxLayoutAlign="stretch" fxLayout="column">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName='Email' placeholder="Email">
+                    <mat-error>
+                        Enter a valid email
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName='Password' placeholder="Password">
+                    <mat-error>
+                        Enter a valid password
+                    </mat-error>
+                </mat-form-field>
+                <div class="forget">
+                    <button routerLink='/forgotpassword' mat-button color="primary">
                         <h4 style="color:#008cff;">
-                            <b>create account</b>
+                            Forget password?
                         </h4>
                     </button>
                 </div>
-                <div fxLayout="row">
-                    <div fxLayoutGap=200px>
-                        <button mat-flat-button routerLink="/forgotpassword">
+                <div>
+                    <mat-checkbox class="checkbox1">Remember me</mat-checkbox>
+                </div>
+                <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between end">
+                    <div>
+                        <mat-card-actions align="start">
+                            <mat-card-actions align="start">
+                            </mat-card-actions>
+                        </mat-card-actions>
+                        <button routerLink='/registration' mat-button color="primary">
                             <h4 style="color:#008cff;">
-                                <b> Forgot password?
-                                </b>
+                                Create account
                             </h4>
                         </button>
-                        <button mat-raised-button color="primary">Next</button>
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary">log in</button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </form1>
+        </form>
     </mat-card>
 </div>
