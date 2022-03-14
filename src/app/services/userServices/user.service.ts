@@ -16,4 +16,13 @@ export class UserService {
     console.log("Signup called",data)
     return this.httpService.postService('/User/Register',data,false,headersObject)
   }
+  loginuser(data:any){
+    let headersObject={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log("Login called",data)
+    return this.httpService.postService('/User/Login',data,false,headersObject)
+  }
 } 
