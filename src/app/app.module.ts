@@ -17,6 +17,7 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {FormsModule} from '@angular/forms';
     MatCardModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,69 +1,70 @@
-<div fxflex="100" fxLayout="row" fxLayoutAlign="center center" fxFlexFill >
+<div fxflex="100" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
   <mat-card>
-    <div fxLayout="row" fxLayoutAlign="center center" >
-      <div> 
-        <div>
-          <h1 class="header" >
-            <span style="color:hsl(249, 100%, 50%)">F</span>
-            <span style="color:hsl(345, 79%, 49%)">u</span>
-            <span style="color:rgb(221, 224, 28)">n</span>
-            <span style="color:#2812f1">d</span>
-            <span style="color:hsl(135, 92%, 39%)">o</span>
-            <span style="color:#FF0066">o</span>
-          </h1>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div>
+        <h1 class="header" fxLayoutAlign="center center">
+          <span style="color:hsl(249, 100%, 50%)">F</span>
+          <span style="color:hsl(345, 79%, 49%)">u</span>
+          <span style="color:rgb(221, 224, 28)">n</span>
+          <span style="color:#2812f1">d</span>
+          <span style="color:hsl(135, 92%, 39%)">o</span>
+          <span style="color:#FF0066">o</span>
+        </h1 >
+        <div fxLayoutAlign="center center">
           <h2>Create your Fundoo Account</h2>
         </div>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
             <mat-form-field class="full-width-name" appearance="outline">
               <mat-label>First name</mat-label>
-              <input matInput formControlName="firstName" placeholder="">
+              <input matInput formControlName="firstName" firstName="firstName">
               <mat-error>Invalid Name</mat-error>
             </mat-form-field>
             <mat-form-field class="full-width-name" appearance="outline">
-              <mat-label>Last name</mat-label>         
-              <input matInput formControlName="lastName" placeholder="">
+              <mat-label>Last name</mat-label>
+              <input matInput formControlName="lastName" lastName="lastName">
               <mat-error>Invalid Name</mat-error>
             </mat-form-field>
           </div>
-          <div fxLayout="column">            
-            <mat-form-field class="full-width-email" appearance="outline">
+          <div fxLayout="row" fxLayoutAlign="center center">
+          <mat-form-field class="full-width-email" appearance="outline">
               <mat-label>Email</mat-label>
-              <input matInput formControlName="email" placeholder="Email">
+              <input matInput formControlName="email" email="email">
               <mat-hint>You can use letters, numbers & periods </mat-hint>
               <mat-error>Invalid Email</mat-error>
-            </mat-form-field>     
+            </mat-form-field>
           </div>
-              
+
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
             <mat-form-field class="full-width-password" appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput formControlName="password" placeholder="" type="password" > 
-              <mat-hint class="hint">Use with a mix of letters, numbers & symbols</mat-hint> 
-              <mat-error>Invalid Password</mat-error>          
+              <input matInput formControlName="password" password="password" type="password">
+              <mat-hint class="hint">Use with a mix of letters, numbers & symbols</mat-hint>
+              <mat-error>Invalid Password</mat-error>
             </mat-form-field>
             <mat-form-field class="full-width-password" appearance="outline">
               <mat-label>Confirm</mat-label>
-              <input matInput formControlName="confirmPassword" placeholder=" " type="password">    
-              <mat-error>Invalid Password</mat-error>      
+              <input matInput formControlName="confirmPassword" confirmPassword="confirmPassword" type="password">
+              <mat-error>Invalid Password</mat-error>
             </mat-form-field>
           </div>
-              <div>
-                <mat-checkbox class="checkbox">Show Password</mat-checkbox>
-              </div>
-              <div class="buttons" fxLayoutGap=250px>
-                <a class="link" routerLink='/login' mat-button href="">
-                  <h4 style="color:#008cff;">
-                  Sign in instead
-                  </h4></a>
-               <button class="next" mat-raised-button color="primary">Next</button>
-              </div> 
-            </form>
+          <div>
+            <mat-checkbox class="checkbox">Show Password</mat-checkbox>
           </div>
-          <div class="image" fxHide.xs="true">
-            <img src="assets/icon.svg">
-          One Account.All of Google working for you
-        </div>
-        </div>
-        </mat-card>  
+          <div class="buttons" fxLayoutGap=250px>
+            <a class="link" routerLink='/login' mat-button href="">
+              <h4 style="color:#008cff;">
+                Sign in instead
+              </h4>
+            </a>
+            <button class="next" mat-raised-button color="primary">Next</button>
+          </div>
+        </form>
+      </div>
+      <div class="image" fxHide.xs="true">
+        <img src="assets/icon.svg">
+        One Account.All of Google working for you
+      </div>
+    </div>
+  </mat-card>
 </div>
