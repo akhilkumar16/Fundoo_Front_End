@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
   selector: 'app-changepassword',
@@ -12,7 +13,7 @@ export class ChangepasswordComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private userService: UserService) { }
 
   ngOnInit() {
     this.resetForm = this.formBuilder.group({
@@ -20,11 +21,14 @@ export class ChangepasswordComponent implements OnInit {
     });
   }
   onchangeSubmit() {
-    if (this.resetForm.valid) {
-      console.log(this.resetForm.value);
+    this.submitted = true;
+    if (this.resetForm.invalid) {
+      return
     }
-    else
-      console.log("form is not valid fill form correctly")
-    }
-}
 
+    console.log(this.resetForm.value);
+    this.userService.resetuser(this.resetForm.value).subscribe((response: any) => {
+      console.log("login successfull", response);
+    })
+  }
+}

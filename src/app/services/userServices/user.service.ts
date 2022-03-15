@@ -5,24 +5,42 @@ import { HttpService } from '../httpservices/http.service';
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private httpService:HttpService) { 
+  constructor(private httpService: HttpService) {
   }
-  registeruser(data:any){
-    let headersObject={
+  registeruser(data: any) {
+    let headersObject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     }
-    console.log("Signup called",data)
-    return this.httpService.postService('/User/Register',data,false,headersObject)
+    console.log("Signup called", data)
+    return this.httpService.postService('/User/Register', data, false, headersObject)
   }
-  loginuser(data:any){
-    let headersObject={
+  loginuser(data: any) {
+    let headersObject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     }
-    console.log("Login called",data)
-    return this.httpService.postService('/User/Login',data,false,headersObject)
+    console.log("Login called", data)
+    return this.httpService.postService('/User/Login', data, false, headersObject)
+  }
+  forgetuser(data: any) {
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log("forgotPassword called", data.email)
+    return this.httpService.postService('/User/ForgotPassword?Email=' + data.email, {}, false, headersObject)
+  }
+  resetuser(data: any) {
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    console.log("reset called", data)
+    return this.httpService.postService('/User/ResetPassword', data, false, headersObject)
   }
 } 
