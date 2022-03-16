@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-getallnotes',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./getallnotes.component.scss']
 })
 export class GetallnotesComponent implements OnInit {
-
+NoteList:any
   constructor() { }
 
   ngOnInit(): void {
+    this.NoteList = [{ title: ' ', description:''}]
   }
 
 }

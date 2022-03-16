@@ -27,6 +27,7 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { IconsComponent } from './components/icons/icons.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -60,7 +61,7 @@ import { IconsComponent } from './components/icons/icons.component';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,MatToolbarModule
+    HttpClientModule,MatToolbarModule,MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

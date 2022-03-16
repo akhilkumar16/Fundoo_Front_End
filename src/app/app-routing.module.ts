@@ -8,16 +8,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
-  {path:"registration",component:RegistrationComponent},
-  {path:"login",component:LoginComponent},
-  {path:"forgotpassword",component:ForgotpasswordComponent},
-  {path:"changepassword",component:ChangepasswordComponent},
-  {path:"dashboard",component:DashboardComponent,
-children:[
-  {path:"note",component:GetallnotesComponent},
+  { path: "registration", component: RegistrationComponent },
+  { path: "login", component: LoginComponent },
+  { path: "forgotpassword", component: ForgotpasswordComponent },
+  { path: "changepassword", component: ChangepasswordComponent },
+  {
+    path: "dashboard", component: DashboardComponent,
+    children: [
+      { path: "note", component: GetallnotesComponent },
 
-]
-}
+    ]
+  }
 ];
 
 @NgModule({

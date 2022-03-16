@@ -1,4 +1,8 @@
-<p>getallnotes works!</p>
- <app-takenote></app-takenote>
- <app-displaynotes></app-displaynotes>
-
+<div fxLayout="column" style="width:100vw ;height: 100vh">
+    <div fxLayoutAlign="center">
+        <app-note></app-note>
+    </div>
+    <div>
+        <app-displaynotes [NotesArray]='NoteList'></app-displaynotes>
+    </div>
+</div>
