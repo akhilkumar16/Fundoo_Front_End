@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
@@ -8,17 +9,18 @@ import { UserService } from 'src/app/services/userservices/user.service';
   styleUrls: ['./changepassword.component.scss']
 })
 export class ChangepasswordComponent implements OnInit {
-
+  token :any 
   resetForm!: FormGroup;
   submitted = false;
 
 
-  constructor(private formBuilder: FormBuilder,private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder,private userService: UserService,private activatedroute:ActivatedRoute) { }
 
   ngOnInit() {
     this.resetForm = this.formBuilder.group({
       Password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    this.activatedroute.snapshot.paramMap.get('token')
   }
   onchangeSubmit() {
     this.submitted = true;
@@ -27,8 +29,8 @@ export class ChangepasswordComponent implements OnInit {
     }
 
     console.log(this.resetForm.value);
-    this.userService.resetuser(this.resetForm.value).subscribe((response: any) => {
-      console.log("login successfull", response);
+    this.userService.resetuser(this.resetForm.value,this.token).subscribe((response: any) => {
+      console.log("change successfull", response);
     })
   }
 }

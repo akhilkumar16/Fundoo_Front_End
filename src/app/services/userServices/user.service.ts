@@ -34,13 +34,14 @@ export class UserService {
     console.log("forgotPassword called", data.email)
     return this.httpService.postService('/User/ForgotPassword?Email=' + data.email, {}, false, headersObject)
   }
-  resetuser(data: any) {
+  resetuser(data: any,token:any) {
     let headersObject = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization:'Bearer'+token
       })
     }
     console.log("reset called", data)
-    return this.httpService.postService('/User/ResetPassword', data, false, headersObject)
+    return this.httpService.postService('/User/ResetPassword', data,true, headersObject)
   }
 } 

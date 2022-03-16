@@ -24,7 +24,7 @@ export class ForgotpasswordComponent implements OnInit {
       return
     }
 
-    console.log(this.forgetForm.value);debugger
+    console.log(this.forgetForm.value);
     this.userService.forgetuser(this.forgetForm.value).subscribe((response: any) => {
       console.log(" forgot password", response);
     })

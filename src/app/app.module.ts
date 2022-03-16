@@ -18,6 +18,17 @@ import { ChangepasswordComponent } from './components/changepassword/changepassw
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { TakenoteComponent } from './components/takenote/takenote.component';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { IconsComponent } from './components/icons/icons.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,10 +36,18 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    DashboardComponent,
+    TakenoteComponent,
+    GetallnotesComponent,
+    DisplaynotesComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
+    MatListModule,
+    MatIconModule,
+    MatSidenavModule,
     AppRoutingModule,
     MatGridListModule,
     BrowserAnimationsModule,
@@ -41,7 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
