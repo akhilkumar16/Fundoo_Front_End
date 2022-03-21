@@ -8,9 +8,11 @@ import { HttpService } from '../httpservices/http.service';
 export class NoteservicesService {
   token: any
 
-  constructor(private httpservice: HttpService) { }
+  constructor(private httpservice: HttpService) {    this.token = localStorage.getItem("token")
+}
+  
   takenote(data: any) {
-    this.token = localStorage.getItem("token")
+    // this.token = localStorage.getItem("token")
     let headerobject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -20,15 +22,14 @@ export class NoteservicesService {
     console.log("take note called", data);
     return this.httpservice.postService('Notes/Create', data, true, headerobject);
   }
-  getallnotes() {
-    this.token = localStorage.getItem("token")
-    let headerobject = {
+  getnotes() 
+  {
+    let header= {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization ': 'Bearer' + this.token
+        'Content-Type':'application/json',
+        'Authorization':'Bearer ' + this.token
       })
     }
-    console.log("get note called");
-    return this.httpservice.getService('Notes/GetAll', true, headerobject);
-  }
+   return this.httpservice.getService('Notes/GetAll', true,header )
+   }
 }
