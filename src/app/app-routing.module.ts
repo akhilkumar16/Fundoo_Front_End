@@ -4,8 +4,10 @@ import { ChangepasswordComponent } from './components/changepassword/changepassw
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { IconsComponent } from './components/icons/icons.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+// import { AuthguardserviceService } from './services/authguardservice/authguardservice.service';
 
 const routes: Routes = [
   { path: "registration", component: RegistrationComponent },
@@ -18,7 +20,9 @@ const routes: Routes = [
       { path: "note", component: GetallnotesComponent },
 
     ]
-  }
+  },
+  { path: "icons",component:IconsComponent},
+
 ];
 
 @NgModule({

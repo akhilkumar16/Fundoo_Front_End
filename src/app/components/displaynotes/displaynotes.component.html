@@ -1,18 +1,20 @@
-<div class="content" >
-    <div style="margin-top: 100px; margin-left: 80px;">
-    <div fxLayout="row" >
+<div fxLayout="row wrap" fxLayoutGap="20px grid" style="padding-top: 5%; padding-left: 10%;">
 
-        <div fxFlex="100%" *ngFor="let note of NotesArray" >
-            <mat-card style="width:300px;height: 70px; margin-bottom: 40px;">
-                <div>{{note.title}}</div>
-                <div>{{note.description}}</div>
-                <div>
-                    <app-icons class="icons"></app-icons>
-                </div>
-            </mat-card>
+    <div *ngFor="let note of NotesArray">
 
-        </div>
-
+        <mat-card class="example-card">
+            <mat-card-title>
+                {{note.title}}
+                <button class="pinbutton">
+                    <img class="pin" src="/assets/push_pin_black_24dp.svg" alt="">
+                </button>
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{ note.discription }}
+            </mat-card-subtitle>
+            <mat-card-content class="matcardicons">
+                <app-icons></app-icons>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>
-</div> 

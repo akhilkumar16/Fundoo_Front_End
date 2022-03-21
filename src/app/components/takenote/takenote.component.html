@@ -1,20 +1,46 @@
-<div fxflex="100" fxLayout="column" fxLayoutAlign="center center">
-    <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 30px;">
-        <mat-card class="center" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
-            <div *ngIf=" isshow">
-                <input type="notes" placeholder="Title" >
+<div class="section" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="createnote">
+            <div class="takeanote" *ngIf="!writenote" (click)="takeanote()" fxLayout="column"
+                fxLayoutAlign="center center">
+
+                <mat-form-field class="matform1" appearance="outline">
+                    <input class="note1" type="text" matInput placeholder="Take a note...">
+
+                    <button mat-icon-button class="closebutton" aria-label="Example icon-button with menu icon">
+                        <img class="checkbox" src="/assets/check_box_black_24dp.svg" alt="">
+
+                    </button>
+
+                    <button mat-icon-button class="closebutton" aria-label="Example icon-button with menu icon">
+                        <img class="brush" src="/assets/brush_black_24dp.svg" alt="">
+
+                    </button>
+
+                    <button mat-icon-button class="closebutton" aria-label="Example icon-button with menu icon">
+                        <img class="insertphoto" src="/assets/insert_photo_black_24dp.svg" alt="">
+
+                    </button>
+
+                </mat-form-field>
+
             </div>
-            <div *ngIf=" !isshow || isshow">
-                <input type="notes" placeholder="take a note..."(click)="Show()">
-            </div>
-            <div fxLayout="row" class="icons" fxLayoutAlign="space-between center">
-                <div *ngIf=" isshow ">
+
+            <div class="title" *ngIf="writenote" fxLayout="column" fxLayoutAlign="center center">
+                <input class="note3" matInput type="text" placeholder="Title" formControlName="title">
+
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <img class="pin" src="/assets/push_pin_black_24dp.svg" alt="">
+
+                </button>
+                <input class="note2" matInput type="text" placeholder="Take a note..." formControlName="discription">
+                <div class="closebutton1" fxLayout="row" fxLayoutAlign="space-between center">
                     <app-icons></app-icons>
+                    <button (click)="onSubmit()" mat-stroked-button>close</button>
+
                 </div>
-                <div>
-                    <button mat-button>close</button>
-                </div>
+
             </div>
-        </mat-card>
-    </div>
+        </div>
+    </form>
 </div>

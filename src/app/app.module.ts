@@ -28,7 +28,7 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { AuthguardserviceService } from './services/authguardservice/authguardservice.service';
 
 
 @NgModule({
@@ -63,7 +63,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     HttpClientModule,MatToolbarModule,MatExpansionModule
   ],
-  providers: [],
+  providers: [
+    AuthguardserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

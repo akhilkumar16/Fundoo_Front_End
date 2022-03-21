@@ -9,14 +9,15 @@ export class HttpService {
   BaseUrl=environment.BaseUrl
   constructor(private http:HttpClient) { }
 
-  postService(url: string, reqdata: any, token: boolean= false, httpOptions: any={}){
+  postService(url: any, reqdata: any, token: boolean= false, httpOptions: any){
 
-    console.log(reqdata)
+    console.log(reqdata,token)
 
     return this.http.post(this.BaseUrl+url,reqdata,token && httpOptions)
 
   }
-  getService(){
+  getService(url: string, token: boolean = false, httpAuthOptions: any = {}) {
+    console.log("Get service called");
 
   }
   putService(){

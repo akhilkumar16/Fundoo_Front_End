@@ -1,35 +1,126 @@
-input[type=notes], select {
+.createnote{
+    border-radius: opx !important;
+    border: none;
+}
+.takeanote{
+    
+    border: none;
+    margin-top: 4%;   
+}
+.matform1{
+    border: 2px solid red;
+    width: 500px; 
+    margin-top: 20px;
+    margin-left: 90px;
+    border: none;
+    
+}
+.note1{
+    
+    background: transparent;
+    border: none;
+    font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; 
+    font-size: 15px;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    outline: none;
     width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-.card{
-    width: 700px;
-    height: 250px;
+    overflow: hidden;
+    height: 16px!important;
+    justify-content: center;
+    margin-top:-2%;
+    position: relative;
+    margin-bottom:-2%;
+    margin-left: 2%;
+   
 }
-.notes{
-    padding: 0;
-    width: 500px;
-    margin-left: 7px;
+.checkbox{
+    margin-left: 1000%; 
+    margin-bottom:-2%;
+    position: relative; 
+    top: -45%;
+    left: -100%; 
+    width: 25px; 
+    height: 25px; 
+    opacity: 0.54;
 }
-.text{ 
-    font-weight: bold;
-    height:43px;
-    width: 600px;
-    border:none;
-    margin-left: -15px  
+.brush{
+    margin-left: 825%; 
+    margin-top: -45%; 
+    position: relative; 
+    top: -20%; 
+    left: 80%; 
+    width: 25px; 
+    height: 25px; 
+    opacity: 0.54;
 }
-.text:focus{
-    outline: none;
-}
-.icons{
-    font-weight: 600;
-    height:43px;
-    width: 500px;
-    border:none;   
-}
-.icons:focus{
-    outline: none;
-}
+.insertphoto{
+    margin-left: 850%; 
+    margin-top: 20%; 
+    position: relative; 
+    top: -50%; 
+    left: 58%; 
+    width: 25px; 
+    height: 25px;
+    opacity: 0.54;
 
+}
+.title{
+    height: 200px;
+    display: flex;
+    position: relative;
+    top: 5%;
+    margin-top: 10%;
+    border: 1px solid #c6c9c9c9;
+    border-radius: 8px;
+}
+.note3{
+    border: none;
+    font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    width: 500px; 
+    overflow: hidden;
+    height: 66px!important;
+    justify-content: start;
+    margin-top:-10%; 
+    position: relative;
+    top: 20%;
+    margin-bottom:1%;
+    margin-left: 10%;
+}
+.pin{
+    margin-left: 500%;
+    margin-top: -6%; 
+    width: 25px; 
+    height: 25px;
+    opacity: 0.54;
+    position: relative;
+    top: -10%;
+    cursor: pointer;
+}
+.note2{
+    font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; 
+    font-size: 15px;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    outline: none;
+    width: 100%;
+    overflow: hidden;
+    height: 46px!important;
+    justify-content: center;
+    margin-top:2%;
+    position: relative;
+    margin-bottom:2%;
+    margin-left: 10%;
+    top: -2%;
+}
+.closebutton1{
+    margin-top: -0%;
+    margin-left: -20%;
+    height: 28%;
+    width: 80%;
+    margin-bottom: -5%;
+    position: relative;
+}
