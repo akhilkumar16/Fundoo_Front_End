@@ -29,6 +29,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { IconsComponent } from './components/icons/icons.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AuthguardserviceService } from './services/authguardservice/authguardservice.service';
+import { UpdateComponent } from './components/update/update.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AuthguardserviceService } from './services/authguardservice/authguardse
     TakenoteComponent,
     GetallnotesComponent,
     DisplaynotesComponent,
-    IconsComponent
+    IconsComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
