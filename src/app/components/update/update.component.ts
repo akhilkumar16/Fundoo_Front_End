@@ -36,4 +36,11 @@ export class UpdateComponent implements OnInit {
     }
     this.dialogRef.close()
   }
+  Pin() {
+    console.log(this.data);
+
+    this.noteservice.Pin(this.data).subscribe((response: any) => {
+      console.log(response)
+    })
+  }
 }

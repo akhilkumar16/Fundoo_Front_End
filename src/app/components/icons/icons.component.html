@@ -21,7 +21,7 @@
     </div>
     <div>
         <button type="button" class="icons" mat-button>
-            <img class="image" src="/assets/Archievelight.png" width="15px" height="15px" />
+            <img class="image" (click)="Archive()" src="/assets/Archievelight.png" width="15px" height="15px" />
         </button>
     </div>
     <div>
@@ -29,7 +29,7 @@
             <img class="image" src="/assets/more.png" width="15px" height="15px" />
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item  (click)="Delete(note)">Delete</button>
-          </mat-menu>
+            <button mat-menu-item (click)="Delete()">Delete</button>
+        </mat-menu>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpService } from '../httpservices/http.service';
+import { concat } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class NoteservicesService {
     console.log(data);
     return this.httpservice.putService('Notes/Update',data,true,header)
    }
-   delete(data:any) 
+   Pin(data:any) 
    {
      let header= {
        headers: new HttpHeaders({ 
@@ -51,9 +52,35 @@ export class NoteservicesService {
          'Authorization':'Bearer ' + this.token
        })
      }
-     console.log(data.NoteId);
+     console.log(data.noteId);
+     var pinurl = 'Notes/Pin?noteid='+ data.noteId
+    return this.httpservice.putService(pinurl,null,true,header)
+    }
+    archive(data:any) 
+    {
+      let header= {
+        headers: new HttpHeaders({ 
+          'Content-Type':'application/json',
+          'Authorization':'Bearer ' + this.token
+        })
+      }
+      console.log(data.noteId);
+      var archiveurl = 'Notes/Archive?noteid='+ data.noteId
+     return this.httpservice.putService(archiveurl,null,true,header)
+     }
+   delete(data:any) 
+   {
+     console.log(data.noteId);
      
-    return this.httpservice.putService('Notes/Delete',data.NoteId,true,header)
+     let header= {
+       headers: new HttpHeaders({ 
+         'Content-Type':'application/json',
+         'Authorization':'Bearer ' + this.token
+       })
+     }
+     console.log(data.noteId);
+     var url = 'Notes/Delete?noteid='+ data.noteId
+    return this.httpservice.putService(url,null,true,header)
     }
   
 }

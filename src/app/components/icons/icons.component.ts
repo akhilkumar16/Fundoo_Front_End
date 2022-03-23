@@ -7,14 +7,23 @@ import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-@Input() note:any;
-  constructor(public noteservice:NoteservicesService) { }
+  @Input() notedata: any; // notedata is coming from dispaly 
+  constructor(public noteservice: NoteservicesService) { }
 
   ngOnInit(): void {
   }
-Delete(note:any){
-  this.noteservice.delete(note).subscribe((response:any)=>{
-    console.log(response)
-  })
-}
+  Archive() {
+    console.log(this.notedata);
+
+    this.noteservice.archive(this.notedata).subscribe((response: any) => {
+      console.log(response)
+    })
+  }
+  Delete() {
+    console.log(this.notedata);
+
+    this.noteservice.delete(this.notedata).subscribe((response: any) => {
+      console.log(response)
+    })
+  }
 }
