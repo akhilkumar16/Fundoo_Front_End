@@ -1,1 +1,15 @@
-<p>update works!</p>
+<div class="updatenotes">
+    <mat-card-title fxLayout="row">
+        <input matInput type="text" [(ngModel)]="title" />
+        <mat-icon >push_pin</mat-icon>
+    </mat-card-title>
+
+    <mat-card-subtitle>
+        <input matInput type="text" [(ngModel)]="discription" />
+    </mat-card-subtitle>
+
+    <mat-card-content fxlayout="row" fxLayoutAlign="space-between center"style="margin-right: 7%;" >
+        <app-icons></app-icons>
+        <button mat-stroked-button (click)="Updatenotes()">close</button>
+    </mat-card-content>
+</div>

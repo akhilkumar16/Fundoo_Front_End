@@ -30,6 +30,30 @@ export class NoteservicesService {
         'Authorization':'Bearer ' + this.token
       })
     }
-   return this.httpservice.getService('Notes/GetAll', true,header )
+   return this.httpservice.getService('Notes/Show', true,header )
    }
+   updatenotes(data:any){
+
+    let header= {
+      headers: new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    console.log(data);
+    return this.httpservice.putService('Notes/Update',data,true,header)
+   }
+   delete(data:any) 
+   {
+     let header= {
+       headers: new HttpHeaders({ 
+         'Content-Type':'application/json',
+         'Authorization':'Bearer ' + this.token
+       })
+     }
+     console.log(data.NoteId);
+     
+    return this.httpservice.putService('Notes/Delete',data.NoteId,true,header)
+    }
+  
 }

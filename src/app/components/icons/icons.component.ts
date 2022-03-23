@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
 
 @Component({
   selector: 'app-icons',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-
-  constructor() { }
+@Input() note:any;
+  constructor(public noteservice:NoteservicesService) { }
 
   ngOnInit(): void {
   }
-
+Delete(note:any){
+  this.noteservice.delete(note).subscribe((response:any)=>{
+    console.log(response)
+  })
+}
 }

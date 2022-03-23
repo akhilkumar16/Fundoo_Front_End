@@ -25,8 +25,11 @@
         </button>
     </div>
     <div>
-        <button type="button" class="icons" mat-button>
+        <button type="button" class="icons" mat-button [matMenuTriggerFor]="menu">
             <img class="image" src="/assets/more.png" width="15px" height="15px" />
         </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item  (click)="Delete(note)">Delete</button>
+          </mat-menu>
     </div>
 </div>

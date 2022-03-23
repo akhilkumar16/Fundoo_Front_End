@@ -30,6 +30,8 @@ import { IconsComponent } from './components/icons/icons.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AuthguardserviceService } from './services/authguardservice/authguardservice.service';
 import { UpdateComponent } from './components/update/update.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -46,9 +48,11 @@ import { UpdateComponent } from './components/update/update.component';
     IconsComponent,
     UpdateComponent
   ],
+  entryComponents:[UpdateComponent],
   imports: [
     BrowserModule,
     MatListModule,
+    MatDialogModule,
     MatIconModule,
     MatSidenavModule,
     AppRoutingModule,
@@ -63,6 +67,7 @@ import { UpdateComponent } from './components/update/update.component';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    MatMenuModule,
     HttpClientModule,MatToolbarModule,MatExpansionModule
   ],
   providers: [

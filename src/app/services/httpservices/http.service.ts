@@ -20,10 +20,15 @@ export class HttpService {
     console.log("Get service called");
     return this.http.get(this.BaseUrl + url,token && httpOptions);
   }
-  putService(){
+  putService(url: string, reqdata: any, token: boolean= true, httpOptions: any ={}){
 
+    console.log("put service")
+
+    return this.http.put(this.BaseUrl+url,reqdata,token && httpOptions)
   }
-  deleteService(){
+  deleteService(url: any, reqdata: any, token: boolean= true, httpOptions: any){
+    console.log(reqdata,token)
 
+    return this.http.delete(this.BaseUrl+url,reqdata)
   }
 }
