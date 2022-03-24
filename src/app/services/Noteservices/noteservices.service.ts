@@ -9,9 +9,10 @@ import { concat } from 'rxjs';
 export class NoteservicesService {
   token: any
 
-  constructor(private httpservice: HttpService) {    this.token = localStorage.getItem("token")
-}
-  
+  constructor(private httpservice: HttpService) {
+    this.token = localStorage.getItem("token")
+  }
+
   takenote(data: any) {
     // this.token = localStorage.getItem("token")
     let headerobject = {
@@ -23,64 +24,73 @@ export class NoteservicesService {
     console.log("take note called", data);
     return this.httpservice.postService('Notes/Create', data, true, headerobject);
   }
-  getnotes() 
-  {
-    let header= {
+  getnotes() {
+    let header = {
       headers: new HttpHeaders({
-        'Content-Type':'application/json',
-        'Authorization':'Bearer ' + this.token
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
       })
     }
-   return this.httpservice.getService('Notes/Show', true,header )
-   }
-   updatenotes(data:any){
+    return this.httpservice.getService('Notes/Show', true, header)
+  }
+  updatenotes(data: any) {
 
-    let header= {
+    let header = {
       headers: new HttpHeaders({
-        'Content-Type':'application/json',
-        'Authorization':'Bearer ' + this.token
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
       })
     }
     console.log(data);
-    return this.httpservice.putService('Notes/Update',data,true,header)
-   }
-   Pin(data:any) 
-   {
-     let header= {
-       headers: new HttpHeaders({ 
-         'Content-Type':'application/json',
-         'Authorization':'Bearer ' + this.token
-       })
-     }
-     console.log(data.noteId);
-     var pinurl = 'Notes/Pin?noteid='+ data.noteId
-    return this.httpservice.putService(pinurl,null,true,header)
+    return this.httpservice.putService('Notes/Update', data, true, header)
+  }
+  Pin(data: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
     }
-    archive(data:any) 
-    {
-      let header= {
-        headers: new HttpHeaders({ 
-          'Content-Type':'application/json',
-          'Authorization':'Bearer ' + this.token
-        })
-      }
-      console.log(data.noteId);
-      var archiveurl = 'Notes/Archive?noteid='+ data.noteId
-     return this.httpservice.putService(archiveurl,null,true,header)
-     }
-   delete(data:any) 
-   {
-     console.log(data.noteId);
-     
-     let header= {
-       headers: new HttpHeaders({ 
-         'Content-Type':'application/json',
-         'Authorization':'Bearer ' + this.token
-       })
-     }
-     console.log(data.noteId);
-     var url = 'Notes/Delete?noteid='+ data.noteId
-    return this.httpservice.putService(url,null,true,header)
+    console.log(data.noteId);
+    var pinurl = 'Notes/Pin?noteid=' + data.noteId
+    return this.httpservice.putService(pinurl, null, true, header)
+  }
+  archive(data: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
     }
-  
+    console.log(data.noteId);
+    var archiveurl = 'Notes/Archive?noteid=' + data.noteId
+    return this.httpservice.putService(archiveurl, null, true, header)
+  }
+  delete(data: any) {
+    console.log(data.noteId);
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(data.noteId);
+    var url = 'Notes/Delete?noteid=' + data.noteId
+    return this.httpservice.putService(url, null, true, header)
+  }
+  deletetotal(data: any) {
+    console.log(data.noteId);
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(data.noteId);
+    var url = 'Notes/ForeverDelete?noteid=' + data.noteId
+    return this.httpservice.deleteService(url,header)
+  }
+
 }

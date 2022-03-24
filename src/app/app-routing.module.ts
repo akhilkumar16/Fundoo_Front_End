@@ -7,22 +7,27 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { IconsComponent } from './components/icons/icons.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-// import { AuthguardserviceService } from './services/authguardservice/authguardservice.service';
-
-const routes: Routes = [
+import { AuthenticationGuard } from './authentication.guard';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { DeletenotesComponent } from './components/deletenotes/deletenotes.component';
+ const routes: Routes = [
+  { path:'', redirectTo:"/login", pathMatch:'full' },
   { path: "registration", component: RegistrationComponent },
   { path: "login", component: LoginComponent },
   { path: "forgotpassword", component: ForgotpasswordComponent },
   { path: "changepassword", component: ChangepasswordComponent },
   {
-    path: "dashboard", component: DashboardComponent,
+    path: "dashboard", component: DashboardComponent,canActivate:[AuthenticationGuard],
     children: [
+      { path:'', redirectTo:"note", pathMatch:'full' },
       { path: "note", component: GetallnotesComponent},
+      { path: "archive",component:ArchiveComponent},
+      { path: "deletenotes",component:DeletenotesComponent},
+      { path: '',component:IconsComponent},
 
     ]
   },
-  { path: "icons",component:IconsComponent},
-
+  
 ];
 
 @NgModule({

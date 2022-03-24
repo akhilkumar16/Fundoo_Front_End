@@ -26,9 +26,9 @@ export class HttpService {
 
     return this.http.put(this.BaseUrl+url,reqdata,token && httpOptions)
   }
-  deleteService(url: any, reqdata: any, token: boolean= true, httpOptions: any){
-    console.log(reqdata,token)
+  deleteService(url: any, httpOptions: any ={}){
+    console.log("deleted totally")
 
-    return this.http.delete(this.BaseUrl+url,reqdata)
+    return this.http.delete(this.BaseUrl+url, httpOptions)
   }
 }

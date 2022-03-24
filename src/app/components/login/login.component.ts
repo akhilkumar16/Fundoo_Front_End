@@ -12,8 +12,10 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
+  user='1';
   constructor(private formBuilder: FormBuilder , private userService: UserService, private route: Router) { }
   ngOnInit() {
+    localStorage.setItem('token',this.user);
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       Password: ['', [Validators.required, Validators.minLength(6)]],

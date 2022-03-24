@@ -32,6 +32,8 @@ import { AuthguardserviceService } from './services/authguardservice/authguardse
 import { UpdateComponent } from './components/update/update.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { DeletenotesComponent } from './components/deletenotes/deletenotes.component';
+import { ArchiveComponent } from './components/archive/archive.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import {MatMenuModule} from '@angular/material/menu';
     GetallnotesComponent,
     DisplaynotesComponent,
     IconsComponent,
-    UpdateComponent
+    UpdateComponent,
+    DeletenotesComponent,
+    ArchiveComponent
   ],
   entryComponents:[UpdateComponent],
   imports: [

@@ -1,28 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
+
 @Component({
-  selector: 'app-getallnotes',
-  templateUrl: './getallnotes.component.html',
-  styleUrls: ['./getallnotes.component.scss']
+  selector: 'app-deletenotes',
+  templateUrl: './deletenotes.component.html',
+  styleUrls: ['./deletenotes.component.scss']
 })
-export class GetallnotesComponent implements OnInit {
-  AllNoteList: any
+export class DeletenotesComponent implements OnInit {
+  DeletedNoteList : any 
   constructor(private noteservices: NoteservicesService) { }
 
   ngOnInit(): void {
-
-    this.getallnotes()
+    this.getallnotes();
   }
   getallnotes() {
     this.noteservices.getnotes().subscribe((response: any) => {
       console.log(response.data)
       var filterlist = response.data.filter((obj: any) => {
-        return obj.delete == false && obj.archive == false
+        return obj.delete == true;
       })
       console.log(filterlist);
 
-      this.AllNoteList = filterlist;
+      this.DeletedNoteList = filterlist;
     })
   }
-  
 }
