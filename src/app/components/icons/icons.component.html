@@ -1,7 +1,14 @@
 <div fxLayout="row" fxLayoutAlign="start none">
-    <div>
-        <button type="button" class="icons" mat-button>
-            <img class="image" src="/assets/Remindme.png" width="15px" height="15px" />
+    <div >
+        <button type="button" mat-button>
+            <img [matMenuTriggerFor]="remindermenu" class="image" src="/assets/Remindme.png" width="15px" height="15px" />
+            <mat-menu #remindermenu="matMenu">
+                <button mat-menu-item>Today</button>
+                <button mat-menu-item>Tomorrow</button>
+                <button mat-menu-item>This Week</button>
+                <button mat-menu-item>Select date/time</button>
+                <button mat-menu-item>Select location</button>
+            </mat-menu>
         </button>
     </div>
     <div>
