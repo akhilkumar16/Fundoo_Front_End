@@ -1,7 +1,9 @@
-<div fxLayout="row" fxLayoutAlign="start none">
-    <div >
-        <button type="button" mat-button>
-            <img [matMenuTriggerFor]="remindermenu" class="image" src="/assets/Remindme.png" width="15px" height="15px" />
+<div class="icons" >
+    <div>
+    <div *ngIf="this.notedata.delete === false" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="35px">
+        <div>
+            <img type="button" class="icons" [matMenuTriggerFor]="remindermenu" class="image" src="/assets/Remindme.png"
+                width="15px" height="15px" />
             <mat-menu #remindermenu="matMenu">
                 <button mat-menu-item>Today</button>
                 <button mat-menu-item>Tomorrow</button>
@@ -9,34 +11,38 @@
                 <button mat-menu-item>Select date/time</button>
                 <button mat-menu-item>Select location</button>
             </mat-menu>
-        </button>
+        </div>
+        <div>
+            <img type="button" class="icons" class="image" src="/assets/Collaborator.png" width="15px" height="15px" />
+        </div>
+        <div>
+            <img [matMenuTriggerFor]="colormenu" src="/assets/Background.png" width="15px" height="px" />
+            <mat-menu #colormenu="matMenu">
+                <mat-card fxLayout="row wrap">
+                    <div *ngFor="let color of given" class="colorButton">
+                        <button mat-mini-fab [style.background]="color?.colorcode" (click)="select(color?.name)">
+                        </button>
+                    </div>
+                </mat-card>
+            </mat-menu>
+        </div>
+        <div>
+            <img type="button" class="icons" class="image" src="/assets/AddImage.png" width="15px" height="15px" />
+        </div>
+        <div>
+            <img type="button" class="icons" class="image" (click)="Archive()" src="/assets/Archievelight.png"
+                width="15px" height="15px" />
+        </div>
+        <div>
+            <img type="button" class="icons" [matMenuTriggerFor]="menu" class="image" src="/assets/more.png"
+                width="15px" height="15px" />
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="Delete()">Delete</button>
+            </mat-menu>
+        </div>
     </div>
-    <div>
-        <button type="button" class="icons" mat-button>
-            <img class="image" src="/assets/Collaborator.png" width="15px" height="15px" />
-        </button>
-    </div>
-    <div>
-        <button type="button" class="icons" mat-button>
-            <img class="image" src="/assets/Background.png" width="15px" height="15px" />
-        </button>
-    </div>
-    <div>
-        <button type="button" class="icons" mat-button>
-            <img class="image" src="/assets/AddImage.png" width="15px" height="15px" />
-        </button>
-    </div>
-    <div>
-        <button type="button" class="icons" mat-button>
-            <img class="image" (click)="Archive()" src="/assets/Archievelight.png" width="15px" height="15px" />
-        </button>
-    </div>
-    <div>
-        <button type="button" class="icons" mat-button [matMenuTriggerFor]="menu">
-            <img class="image" src="/assets/more.png" width="15px" height="15px" />
-        </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="Delete()">Delete</button>
-        </mat-menu>
+    <div *ngIf="this.notedata.delete === true">
+        <img class="image" (click)="Delete()" src="/assets/restore.svg"/>
+        <img class="image" (click)="Deletetotal()" src="/assets/deletetotal.svg"/>
     </div>
 </div>

@@ -37,7 +37,7 @@ export class TakenoteComponent implements OnInit {
       this.noteservice.takenote(payload).subscribe((response: any) => {
         console.log(response);
       })
-
+      window.location.reload();
     } else {
       console.log("enter data");
     }

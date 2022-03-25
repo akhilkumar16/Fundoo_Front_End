@@ -44,7 +44,7 @@ export class NoteservicesService {
     console.log(data);
     return this.httpservice.putService('Notes/Update', data, true, header)
   }
-  Pin(data: any) {
+  Pinned(data: any) {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -91,6 +91,19 @@ export class NoteservicesService {
     console.log(data.noteId);
     var url = 'Notes/ForeverDelete?noteid=' + data.noteId
     return this.httpservice.deleteService(url,header)
+  }
+  changeofcolor(data:any) {
+    console.log(data.noteId);
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(data.noteId);
+    var url = 'Notes/AddColor?color=' +data.color+'&noteid='+ data.noteId
+    return this.httpservice.putService(url,null,true,header)
   }
 
 }

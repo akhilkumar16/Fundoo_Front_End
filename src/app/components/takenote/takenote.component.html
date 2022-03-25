@@ -5,7 +5,7 @@
                 fxLayoutAlign="center center">
 
                 <mat-form-field class="matform1" appearance="outline">
-                    <input class="note1" type="text" matInput placeholder="Take a note...">
+                    <input class="note1" type ="text" matInput placeholder="Take a note...">
 
                     <button mat-icon-button class="closebutton" aria-label="Example icon-button with menu icon">
                         <img class="checkbox" src="/assets/check_box_black_24dp.svg" alt="">
@@ -19,13 +19,9 @@
 
                     <button mat-icon-button class="closebutton" aria-label="Example icon-button with menu icon">
                         <img class="insertphoto" src="/assets/insert_photo_black_24dp.svg" alt="">
-
                     </button>
-
                 </mat-form-field>
-
             </div>
-
             <div class="title" *ngIf="writenote" fxLayout="column" fxLayoutAlign="center center">
                 <input class="note3" matInput type="text" placeholder="Title" formControlName="title">
 
@@ -35,11 +31,9 @@
                 </button>
                 <input class="note2" matInput type="text" placeholder="Take a note..." formControlName="discription">
                 <div class="closebutton1" fxLayout="row" fxLayoutAlign="space-between center">
-                    <app-icons></app-icons>
+                    <app-icons [notedata]="{ delete:false, Archived:false}"></app-icons>
                     <button (click)="onSubmit()" mat-stroked-button>close</button>
-
                 </div>
-
             </div>
         </div>
     </form>

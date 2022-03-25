@@ -34,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { DeletenotesComponent } from './components/deletenotes/deletenotes.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
     IconsComponent,
     UpdateComponent,
     DeletenotesComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    SearchPipe
   ],
   entryComponents:[UpdateComponent],
   imports: [

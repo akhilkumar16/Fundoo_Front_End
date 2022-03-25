@@ -39,7 +39,7 @@ export class UpdateComponent implements OnInit {
   Pin() {
     console.log(this.data);
 
-    this.noteservice.Pin(this.data).subscribe((response: any) => {
+    this.noteservice.Pinned(this.data).subscribe((response: any) => {
       console.log(response)
     })
   }

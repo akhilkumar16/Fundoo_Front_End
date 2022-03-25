@@ -1,6 +1,6 @@
 .example-card {
   width: 250px;
-  border: 1px solid gainsboro ;
+  border: 1px ;
   height: auto;
   border-radius: 15px;
 }
@@ -9,13 +9,13 @@
   border: none; 
   background: none; 
   cursor: pointer;
-   
+  margin-top: 5%;
 }
 
 .pin{
-  margin-left: 220px;
+  // margin-left: 100px;
   margin-top: 5%;
-  margin-bottom: -7px;
+  // margin-bottom: -7px;
   opacity: 0.54;
   width: 25px;
   height: 25px;
@@ -30,8 +30,8 @@
     height: 42%;
     width: 100%;
     border: none;
-    margin-top: 23%;
-    margin-left: -10%;
+    // margin-top: 23%;
+    // margin-left: -10%;
     overflow: visible;
     visibility: hidden;
     
