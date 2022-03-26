@@ -40,7 +40,7 @@ export class IconsComponent implements OnInit {
     console.log(this.notedata);
 
     this.noteservice.delete(this.notedata).subscribe((response: any) => {
-      console.log(response)
+      console.log(response);
     })
   }
   Deletetotal() {

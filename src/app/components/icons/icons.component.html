@@ -18,7 +18,7 @@
         <div>
             <img [matMenuTriggerFor]="colormenu" src="/assets/Background.png" width="15px" height="px" />
             <mat-menu #colormenu="matMenu">
-                <mat-card fxLayout="row wrap">
+                <mat-card class="rap">
                     <div *ngFor="let color of given" class="colorButton">
                         <button mat-mini-fab [style.background]="color?.colorcode" (click)="select(color?.name)">
                         </button>

@@ -1,22 +1,21 @@
 <div fxLayout="row wrap" fxLayoutGap="20px grid" style="padding-top: 5%; padding-left: 10%;">
-
-    <div *ngFor="let note of NotesArray" >
-
-        <mat-card class="example-card" [style.background]="note.color">
-            <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
-                <div (click)="openDialog(note)">
-                    {{note.title}}
-                </div>
-                <div>
-                    <img class="pin" (click)="Pin(note)" src="/assets/push_pin_black_24dp.svg">
-                </div>
-            </mat-card-title>
-            <mat-card-subtitle (click)="openDialog(note)">
-                {{ note.discription }}
-            </mat-card-subtitle>
-            <mat-card-content class="matcardicons">
-                <app-icons [notedata]="note"></app-icons>
-            </mat-card-content>
-        </mat-card>
+    
+        <div *ngFor="let note of NotesArray | search:searchfilter ">
+            <mat-card class="example-card" [style.background]="note.color">
+                <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
+                    <div (click)="openDialog(note)">
+                        {{note.title}}
+                    </div>
+                    <div>
+                        <img class="pin" (click)="Pin(note)" src="/assets/push_pin_black_24dp.svg">
+                    </div>
+                </mat-card-title>
+                <mat-card-subtitle (click)="openDialog(note)">
+                    {{ note.discription }}
+                </mat-card-subtitle>
+                <mat-card-content class="matcardicons">
+                    <app-icons [notedata]="note"></app-icons>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-</div>

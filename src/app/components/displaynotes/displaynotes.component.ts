@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
@@ -10,12 +10,14 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class DisplaynotesComponent implements OnInit {
   @Input() NotesArray:any
+  public searchfilter:any
   title: any;
   discription: any;
   constructor(public dialog : MatDialog,private dataservice:DataService,private note:NoteservicesService) { }
   ngOnInit(): void {
     this.dataservice.recvData.subscribe((response:any)=>{
       console.log(response);
+      this.searchfilter = response
     })
   }
 openDialog(note:any): void{
