@@ -35,6 +35,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DeletenotesComponent } from './components/deletenotes/deletenotes.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { LabelComponent } from './components/label/label.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { SearchPipe } from './pipe/search.pipe';
     UpdateComponent,
     DeletenotesComponent,
     ArchiveComponent,
-    SearchPipe
+    SearchPipe,
+    LabelComponent
   ],
   entryComponents:[UpdateComponent],
   imports: [

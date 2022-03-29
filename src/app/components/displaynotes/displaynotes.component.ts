@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class DisplaynotesComponent implements OnInit {
   @Input() NotesArray:any
-  public searchfilter:any
+  searchfilter:any
   title: any;
   discription: any;
   constructor(public dialog : MatDialog,private dataservice:DataService,private note:NoteservicesService) { }

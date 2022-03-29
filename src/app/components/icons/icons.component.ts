@@ -11,7 +11,7 @@ export class IconsComponent implements OnInit {
   @Input() notedata: any; // notedata is coming from dispaly 
   @Output() changecolour = new EventEmitter<any>();
   showIcons: boolean = true
-  constructor(public noteservice: NoteservicesService, private dataservice: DataService) { }
+  constructor(public noteservice: NoteservicesService) { }
   given = [
     { colorcode: '#fff', name: 'white' },
     { colorcode: '#f28b82', name: 'red' },

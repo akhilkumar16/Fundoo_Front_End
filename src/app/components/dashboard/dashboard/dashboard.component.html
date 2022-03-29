@@ -1,4 +1,4 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="toolbar">
         <div class="menu">
             <button mat-icon-button (click)="snav.toggle()">
@@ -33,10 +33,11 @@
             </button>
         </div>
         <div>
-            <button mat-button class="profile" [matMenuTriggerFor]="logoutMenu"><img src="/assets/profileimage.png" width="20px" height="20px" />
+            <button mat-button class="profile" [matMenuTriggerFor]="logoutMenu"><img src="/assets/profileimage.png"
+                    width="20px" height="20px" />
             </button>
             <mat-menu #logoutMenu="matMenu">
-                <button mat-menu-item (click)="logout()" >Logout</button>
+                <button mat-menu-item (click)="logout()">Logout</button>
             </mat-menu>
         </div>
     </mat-toolbar>
@@ -52,9 +53,14 @@
                     <img class="img" src="/assets/notifications.png" width="25px" height="25px" />
                 </button>
             </div>
+            <div class="example-sidenav-content" *ngFor="let label of LabelList">
+                <button type="button" class="icons" mat-button (click)="snav.toggle()">
+                    <img class="img" src="/assets/label.svg" width="25px" height="25px" />
+                </button>
+            </div>
             <div class="example-sidenav-content">
                 <button type="button" class="icons" mat-button (click)="snav.toggle()">
-                    <img class="img" src="/assets/edit.png" width="25px" height="25px" />
+                    <img class="img" src="/assets/edit.png" (click)="Edit(LabelList)" width="25px" height="25px" />
                 </button>
             </div>
             <div class="example-sidenav-content">
@@ -76,7 +82,10 @@
                     <mat-nav-list>
                         <a class="link" mat-list-item routerLink="." style="text-align: center;">Notes</a>
                         <a class="link" mat-list-item routerLink=".">Reminders</a>
-                        <a class="link" mat-list-item routerLink=".">Edit Labels</a>
+                        <div *ngFor="let label of LabelList">
+                            <a class="link"  mat-list-item routerLink=".">{{label.labelName}}</a>
+                        </div>
+                        <a class="link" mat-list-item (click)="Edit(LabelList)" routerLink=".">Edit Labels</a>
                         <a class="link" mat-list-item routerLink="archive">Archive</a>
                         <a class="link" mat-list-item routerLink="deletenotes">Bin</a>
                     </mat-nav-list>
