@@ -3,6 +3,7 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
 import { FormBuilder ,FormGroup,Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { LabelService } from 'src/app/services/label/label.service';
+import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-label',
@@ -17,6 +18,7 @@ export class LabelComponent implements OnInit {
   LabelList: any
   newlabelName: any
   labelName: any
+  LabelId:any
   name: any
   labelform!: FormGroup
   updatelabelform!: FormGroup
@@ -55,7 +57,9 @@ hovered() {
   doneedit(obj:any) {
     this.edit = false
     console.log(obj.labelName,this.updatelabelform.value.editlabelName);
-    
+    if(obj.labelName!=this.updatelabelform.value.editlabelName){
+      this.updatelabel(obj.labelName,this.updatelabelform.value.editlabelName);
+    }
   }
 
   create() {
@@ -68,16 +72,14 @@ hovered() {
   }
 
   updatelabel(data: any, newdata: any) {
-    if (this.labelName != this.data.labelName) {
-      this.labelservice.updatelabel(data, newdata).subscribe((response: any) => {
-        console.log(response);
-      })
-    }
+   this.labelservice.updatelabel(data,newdata).subscribe((response:any)=>{
+     console.log(response);
+   })
   }
 
   deletelabel(data: any) {
-    this.labelName = data.labelName
-    this.labelservice.deletelabel(this.labelName).subscribe((response: any) => {
+    this.LabelId=data.labelId
+    this.labelservice.deletelabel(this.LabelId).subscribe((response: any) => {
       console.log(response);
     })
   }

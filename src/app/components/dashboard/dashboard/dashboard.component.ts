@@ -49,7 +49,7 @@ export class DashboardComponent implements OnDestroy {
   Edit(LabelList: any) {
     let dialogRef = this.dialog.open(LabelComponent, { data: LabelList });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      console.log(result.data);
     })
   }
 

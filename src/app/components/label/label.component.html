@@ -9,7 +9,7 @@
             </button>
         </form>
     </div>
-    <div *ngFor="let label of LabelList" fxLayoutGap="20px">
+    <div *ngFor="let label of data" fxLayoutGap="20px">
         <div fxLayout="row center" fxLayoutAlign="space-between">
             <form [formGroup]="updatelabelform">
                 <mat-card class="labelcard" fxLayoutAlign="space-between">
@@ -25,4 +25,4 @@
             </form>
         </div>
     </div>
-</div> 
+</div>

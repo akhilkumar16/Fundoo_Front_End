@@ -11,30 +11,47 @@ export class LabelService {
   constructor(private httpservice: HttpService) {
     this.token = localStorage.getItem("token")
   }
-  getheaders() {
-    let header = {
+  getlabels() {
+    let headerobject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return header;
-  }
-  getlabels() {
-    return this.httpservice.getService('Label/AllLabels', true, this.getheaders())
+    return this.httpservice.getService('Label/AllLabels', true,headerobject)
   }
   createlabel(data:any){
+    let headerobject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
     var url = 'Label/Create?labelname='+data
-    return this.httpservice.postService(url,null,true,this.getheaders())
+    return this.httpservice.postService(url,null,true,headerobject)
   }
 
-  updatelabel(olddata:any,newdata:any){
-    var url = 'Label/updatelabel?LabelId=5&LabelName='+olddata.labelName+'&newLabelName='+newdata.labelName;
-    return this.httpservice.putService(url,null,true,this.getheaders())
+  updatelabel(storedlabel:any,newlabel:any){
+    let headerobject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    var url = 'Label/updatelabel?LabelId='+storedlabel+'&LabelName='+newlabel;
+    return this.httpservice.putService(url,null,true,headerobject)
   }
 
   deletelabel(data:any){
-    var url = 'Label/Deletelabel?LabelId'+data;
-    return this.httpservice.deleteService(url,this.getheaders())
+    let headerobject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(data);
+    
+    var url = 'Label/Deletelabel?LabelId='+ data;
+    return this.httpservice.deleteService(url,headerobject)
   }
 }

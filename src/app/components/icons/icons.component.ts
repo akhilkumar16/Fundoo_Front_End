@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data/data.service';
 import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-icons',
@@ -11,7 +12,7 @@ export class IconsComponent implements OnInit {
   @Input() notedata: any; // notedata is coming from dispaly 
   @Output() changecolour = new EventEmitter<any>();
   showIcons: boolean = true
-  constructor(public noteservice: NoteservicesService) { }
+  constructor(public noteservice: NoteservicesService,private dataservice:DataService,private router:Router) { }
   given = [
     { colorcode: '#fff', name: 'white' },
     { colorcode: '#f28b82', name: 'red' },
