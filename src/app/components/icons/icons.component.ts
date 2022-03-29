@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  @Input() notedata: any; // notedata is coming from dispaly 
+  @Input() notedata: any; // notedata is coming from dispaly
+  @Output() trashNoteToRefresh= new EventEmitter<any>();
+  @Output() archiveNoteToRefresh= new EventEmitter<any>(); 
   @Output() changecolour = new EventEmitter<any>();
   showIcons: boolean = true
   constructor(public noteservice: NoteservicesService,private dataservice:DataService,private router:Router) { }
@@ -34,7 +36,8 @@ export class IconsComponent implements OnInit {
     console.log(this.notedata);
 
     this.noteservice.archive(this.notedata).subscribe((response: any) => {
-      console.log(response)
+      console.log(response);
+      this.archiveNoteToRefresh.emit(Response)
     })
   }
   Delete() {
@@ -42,6 +45,7 @@ export class IconsComponent implements OnInit {
 
     this.noteservice.delete(this.notedata).subscribe((response: any) => {
       console.log(response);
+      this.trashNoteToRefresh.emit(Response)
     })
   }
   Deletetotal() {

@@ -20,7 +20,6 @@ export class ArchiveComponent implements OnInit {
         return obj.archive == true
       })
       console.log(filterlist);
-
       this.ArchivedNoteList = filterlist;
     })
   }

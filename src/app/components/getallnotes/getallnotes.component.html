@@ -3,6 +3,7 @@
         <app-note></app-note>
     </div>
     <div>
-        <app-displaynotes [NotesArray]="AllNoteList"></app-displaynotes>
+        <app-displaynotes (changeColorOfNote)="colourchanged($event)" (updateNoteToRefresh)="update($event)" (trashNoteToRefresh)="trash($event)"
+        (archiveNoteToRefresh)="archive($event)" [NotesArray]="AllNoteList"></app-displaynotes>
     </div>
 </div>

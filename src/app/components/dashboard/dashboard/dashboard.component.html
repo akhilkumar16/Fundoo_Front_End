@@ -12,8 +12,8 @@
         <div class="firstContainer" fxLayout="row" fxLayoutAlign="start center" fxfill>
             <div>
                 <button mat-button class="searching"><img src="/assets/search.png" style="width:25px; height: 25px;" />
-                    <input (keyup)="search($event)" type="text" placeholder="Search" class="search">
-                </button>
+                    <input fxHide.xs="true" fxHide.sm="true" fxHide.md="true" type="text" placeholder="Search"
+                    (keyup)="search($event)" class="search">                </button>
             </div>
         </div>
         <div>

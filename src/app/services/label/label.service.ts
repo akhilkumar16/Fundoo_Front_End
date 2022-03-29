@@ -18,7 +18,7 @@ export class LabelService {
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpservice.getService('Label/AllLabels', true,headerobject)
+    return this.httpservice.getService('Label/GetAll', true,headerobject)
   }
   createlabel(data:any){
     let headerobject = {
@@ -31,14 +31,14 @@ export class LabelService {
     return this.httpservice.postService(url,null,true,headerobject)
   }
 
-  updatelabel(storedlabel:any,newlabel:any){
+  updatelabel(data:any,labelName:any){
     let headerobject = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       })
     }
-    var url = 'Label/updatelabel?LabelId='+storedlabel+'&LabelName='+newlabel;
+    var url = 'Label/Update?oldLabelName='+data+'&newLabelName='+labelName;
     return this.httpservice.putService(url,null,true,headerobject)
   }
 
@@ -51,7 +51,7 @@ export class LabelService {
     }
     console.log(data);
     
-    var url = 'Label/Deletelabel?LabelId='+ data;
+    var url = 'Label/Delete?labelName='+ data;
     return this.httpservice.deleteService(url,headerobject)
   }
 }

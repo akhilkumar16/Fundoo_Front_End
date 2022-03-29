@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { UpdateComponent } from '../update/update.component';
 import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
 import { DataService } from 'src/app/services/data/data.service';
+import { outputAst } from '@angular/compiler';
 @Component({
   selector: 'app-displaynotes',
   templateUrl: './displaynotes.component.html',
@@ -10,6 +11,11 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class DisplaynotesComponent implements OnInit {
   @Input() NotesArray:any
+  @Output() changeColorOfNote = new EventEmitter<any>();
+  @Output() updateNoteToRefresh = new EventEmitter<any>();
+  @Output() trashNoteToRefresh = new EventEmitter<any>();
+  @Output() archiveNoteToRefresh= new EventEmitter<any>();
+
   searchfilter:any
   title: any;
   discription: any;
@@ -26,15 +32,27 @@ openDialog(note:any): void{
     this.title=result;
       this.discription=result;
     console.log(result);
+    this.updateNoteToRefresh.emit('')
   })
 }
 responsefromnote(e:any){
   console.log(e);
 }
+message(e:any){  
+  console.log(e);
+  this.changeColorOfNote.emit(" ")
+}
+trash(data:any){  
+  console.log(data);  
+  this.trashNoteToRefresh.emit(" ")
+}
+archive(data:any){  
+  console.log(data);  
+  this.archiveNoteToRefresh.emit(" ")
+}
 Pin(note:any){
   this.note.Pinned(note).subscribe((response:any)=>{
     console.log(response);
-    
   })
 }
 }

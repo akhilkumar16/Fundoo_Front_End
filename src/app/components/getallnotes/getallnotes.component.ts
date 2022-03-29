@@ -24,5 +24,23 @@ export class GetallnotesComponent implements OnInit {
       this.AllNoteList = filterlist;
     })
   }
-  
+  colourchanged(e:any){
+    console.log(e);
+    this.getallnotes();
+  }
+  update(e:any){
+    console.log(e);
+    this.getallnotes();
+  }
+  trash(data:any)
+  {
+     console.log("refreshed",data);
+     this.getallnotes();
+  }
+  archive(data:any)
+  {
+     console.log("refreshed",data);
+     this.getallnotes();
+  }
+
 }

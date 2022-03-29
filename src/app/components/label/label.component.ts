@@ -18,10 +18,10 @@ export class LabelComponent implements OnInit {
   LabelList: any
   newlabelName: any
   labelName: any
-  LabelId:any
   name: any
   labelform!: FormGroup
   updatelabelform!: FormGroup
+  editlabelname: any
 
   constructor(private dialogRef: MatDialogRef<LabelComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
    private labelservice: LabelService,private formbuilder:FormBuilder) {
@@ -78,8 +78,8 @@ hovered() {
   }
 
   deletelabel(data: any) {
-    this.LabelId=data.labelId
-    this.labelservice.deletelabel(this.LabelId).subscribe((response: any) => {
+    this.labelName=data.labelName
+    this.labelservice.deletelabel(this.labelName).subscribe((response: any) => {
       console.log(response);
     })
   }
