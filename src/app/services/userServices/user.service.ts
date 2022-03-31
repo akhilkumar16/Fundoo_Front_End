@@ -44,4 +44,12 @@ export class UserService {
     console.log("reset called", data)
     return this.httpService.postService('User/ResetPassword', data,true, headersObject)
   }
+  getusers(){
+    let headersObject = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    }
+    return this.httpService.getService('User/redis',false, headersObject)
+  }
 } 

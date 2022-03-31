@@ -20,7 +20,7 @@
                     </div>
                     <input class="add" textarea formControlName="editlabelName" placeholder="{{label.labelName}}" />
                     <img class="action" *ngIf="!edit" (click)="editing()" src="/assets/edit.svg">
-                    <img class="action" *ngIf="edit" (click)="doneedit(label)" src="/assets/tick.svg">
+                    <img class="action" *ngIf="edit" (click)="done(label)" src="/assets/tick.svg">
                 </mat-card>
             </form>
         </div>

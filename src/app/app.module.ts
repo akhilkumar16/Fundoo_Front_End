@@ -36,6 +36,7 @@ import { DeletenotesComponent } from './components/deletenotes/deletenotes.compo
 import { ArchiveComponent } from './components/archive/archive.component';
 import { SearchPipe } from './pipe/search.pipe';
 import { LabelComponent } from './components/label/label.component';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { LabelComponent } from './components/label/label.component';
     DeletenotesComponent,
     ArchiveComponent,
     SearchPipe,
-    LabelComponent
+    LabelComponent,
+    CollaboratorComponent
   ],
   entryComponents:[UpdateComponent],
   imports: [

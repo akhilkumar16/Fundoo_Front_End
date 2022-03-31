@@ -16,7 +16,7 @@ export class ArchiveComponent implements OnInit {
   getallnotes() {
     this.noteservices.getnotes().subscribe((response: any) => {
       console.log(response.data)
-      var filterlist = response.data.filter((obj: any) => {
+      var filterlist = response.data.filter((obj: any) => { // fiter will return only true values
         return obj.archive == true
       })
       console.log(filterlist);

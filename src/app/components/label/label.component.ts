@@ -1,6 +1,6 @@
-import { Component,Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { invalid } from '@angular/compiler/src/render3/view/util';
-import { FormBuilder ,FormGroup,Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { LabelService } from 'src/app/services/label/label.service';
 import { DataService } from 'src/app/services/data/data.service';
@@ -24,20 +24,20 @@ export class LabelComponent implements OnInit {
   editlabelname: any
 
   constructor(private dialogRef: MatDialogRef<LabelComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-   private labelservice: LabelService,private formbuilder:FormBuilder) {
+    private labelservice: LabelService, private formbuilder: FormBuilder) {
     this.labelform = this.formbuilder.group({
-      labelName:['',Validators.required]
+      labelName: ['', Validators.required]
     })
     console.log(data);
     this.updatelabelform = this.formbuilder.group({
-      editlabelName:['',Validators.required]
+      editlabelName: ['', Validators.required]
     })
   }
 
   ngOnInit(): void {
-    
+
   }
-hovered() {
+  hovered() {
     this.deleteicon = false
   }
   nothovered() {
@@ -54,11 +54,11 @@ hovered() {
   editing() {
     this.edit = true
   }
-  doneedit(obj:any) {
+  done(obj: any) {
     this.edit = false
-    console.log(obj.labelName,this.updatelabelform.value.editlabelName);
-    if(obj.labelName!=this.updatelabelform.value.editlabelName){
-      this.updatelabel(obj.labelName,this.updatelabelform.value.editlabelName);
+    console.log(obj.labelName, this.updatelabelform.value.editlabelName);
+    if (obj.labelName != this.updatelabelform.value.editlabelName) {
+      this.updatelabel(obj.labelName, this.updatelabelform.value.editlabelName);
     }
   }
 
@@ -72,13 +72,14 @@ hovered() {
   }
 
   updatelabel(data: any, newdata: any) {
-   this.labelservice.updatelabel(data,newdata).subscribe((response:any)=>{
-     console.log(response);
-   })
+    if (data != newdata && newdata != null && newdata != '') {
+      this.labelservice.updatelabel(data, newdata).subscribe((response: any) => {
+        console.log(response);
+      })
+    }
   }
-
   deletelabel(data: any) {
-    this.labelName=data.labelName
+    this.labelName = data.labelName
     this.labelservice.deletelabel(this.labelName).subscribe((response: any) => {
       console.log(response);
     })

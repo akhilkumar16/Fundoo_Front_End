@@ -1,6 +1,6 @@
 <div class="section" fxLayout="column" fxLayoutAlign="space-evenly center">
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
-        <div class="createnote">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()"> <!-- ngsumbit is inbulit angular function for calling form submission-->
+        <div class="createnote" >
             <div class="takeanote" *ngIf="!writenote" (click)="takeanote()" fxLayout="column"
                 fxLayoutAlign="center center">
 

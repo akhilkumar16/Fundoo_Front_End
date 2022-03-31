@@ -20,6 +20,20 @@ export class DisplaynotesComponent implements OnInit {
   title: any;
   discription: any;
   constructor(public dialog : MatDialog,private dataservice:DataService,private note:NoteservicesService) { }
+  colourdata = [
+    { colorcode: '#fff', name: 'white' },
+    { colorcode: '#f28b82', name: 'red' },
+    { colorcode: '#fbbc04', name: 'orange' },
+    { colorcode: '#FFFF00', name: 'yellow' },
+    { colorcode: '#ccff90', name: 'green' },
+    { colorcode: '#a7ffeb', name: 'teal' },
+    { colorcode: '#cbf0f8', name: 'Blue' },
+    { colorcode: '#aecbfa', name: 'darkblue' },
+    { colorcode: '#d7aefb', name: 'purple' },
+    { colorcode: '#fdcfe8', name: 'pink' },
+    { colorcode: '#e6c9a8', name: 'brown' },
+    { colorcode: '#e8eaed', name: 'grey' },
+  ]
   ngOnInit(): void {
     this.dataservice.recvData.subscribe((response:any)=>{
       console.log(response);
@@ -31,7 +45,6 @@ openDialog(note:any): void{
   dialogRef.afterClosed().subscribe(result =>{
     this.title=result;
       this.discription=result;
-    console.log(result);
     this.updateNoteToRefresh.emit('')
   })
 }

@@ -1,15 +1,16 @@
-<div class="updatenotes">
-    <mat-card-title fxLayout="row">
-        <input matInput type="text" [(ngModel)]="title" />
+<mat-card class="updatenotes" [style.background]="colour">
+    <div fxLayout="row">
+        <input class ="input" matInput type="text" [(ngModel)]="title" />
         <mat-icon (click)="Pin()">push_pin</mat-icon>
-    </mat-card-title>
+    </div>
 
-    <mat-card-subtitle>
-        <input matInput type="text" [(ngModel)]="discription" />
-    </mat-card-subtitle>
+    <div>
+        <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"
+            [(ngModel)]="discription"></textarea>
+    </div>
 
-    <mat-card-content fxlayout="row" fxLayoutAlign="space-between center"style="margin-right: 7%;" >
-        <app-icons [notedata]="data"></app-icons>
+    <div fxlayout="row" fxLayoutAlign="space-between center" style="margin-right: 7%;">
+        <app-icons [notedata]="data" [colourdata]="data"></app-icons>
         <button mat-stroked-button (click)="Updatenotes()">close</button>
-    </mat-card-content>
-</div>
+    </div>
+</mat-card>

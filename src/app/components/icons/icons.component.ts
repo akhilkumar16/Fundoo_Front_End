@@ -2,6 +2,8 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data/data.service';
 import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -9,26 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  @Input() notedata: any; // notedata is coming from dispaly
+  @Input() notedata: any; // notedata is coming from display
+  @Input() colourdata:any;// colourdata coming from display
   @Output() trashNoteToRefresh= new EventEmitter<any>();
   @Output() archiveNoteToRefresh= new EventEmitter<any>(); 
   @Output() changecolour = new EventEmitter<any>();
   showIcons: boolean = true
-  constructor(public noteservice: NoteservicesService,private dataservice:DataService,private router:Router) { }
-  given = [
-    { colorcode: '#fff', name: 'white' },
-    { colorcode: '#f28b82', name: 'red' },
-    { colorcode: '#fbbc04', name: 'orange' },
-    { colorcode: '#FFFF00', name: 'yellow' },
-    { colorcode: '#ccff90', name: 'green' },
-    { colorcode: '#a7ffeb', name: 'teal' },
-    { colorcode: '#cbf0f8', name: 'Blue' },
-    { colorcode: '#aecbfa', name: 'darkblue' },
-    { colorcode: '#d7aefb', name: 'purple' },
-    { colorcode: '#fdcfe8', name: 'pink' },
-    { colorcode: '#e6c9a8', name: 'brown' },
-    { colorcode: '#e8eaed', name: 'grey' },
-  ]
+  constructor(public noteservice: NoteservicesService,private dataservice:DataService,private router:Router,public dialog: MatDialog) { }
+  
 
   ngOnInit(): void {
   }
@@ -63,4 +53,11 @@ export class IconsComponent implements OnInit {
       this.changecolour.emit(color)
     })
   }
+  collab(notedata:any) {
+    notedata = this.notedata
+    let dialogRef = this.dialog.open(CollaboratorComponent, { data: notedata });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
+}
 }

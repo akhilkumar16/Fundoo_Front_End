@@ -13,13 +13,13 @@
             </mat-menu>
         </div>
         <div>
-            <img type="button" class="icons" class="image" src="/assets/Collaborator.png" width="15px" height="15px" />
+            <img type="button" class="icons" class="image" src="/assets/Collaborator.png" (click)="collab(notedata)" width="15px" height="15px" />
         </div>
         <div>
             <img [matMenuTriggerFor]="colormenu" src="/assets/Background.png" width="15px" height="px" />
             <mat-menu #colormenu="matMenu">
                 <mat-card class="rap">
-                    <div *ngFor="let color of given" class="colorButton">
+                    <div *ngFor="let color of colourdata" class="colorButton">
                         <button mat-mini-fab [style.background]="color?.colorcode" (click)="select(color?.name)">
                         </button>
                     </div>
@@ -34,9 +34,9 @@
                 width="15px" height="15px" />
         </div>
         <div>
-            <img type="button" class="icons" [matMenuTriggerFor]="menu" class="image" src="/assets/more.png"
+            <img [matMenuTriggerFor]="menumore" src="/assets/more.png"
                 width="15px" height="15px" />
-            <mat-menu #menu="matMenu">
+            <mat-menu #menumore="matMenu">
                 <button mat-menu-item (click)="Delete()">Delete</button>
                 <span mat-menu-item>Add Label</span> 
             </mat-menu>

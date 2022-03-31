@@ -22,7 +22,7 @@ export class DashboardComponent implements OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.getlabel();
-    console.log(this.LabelList);
+    // console.log(this.LabelList);
   }
 
   ngOnDestroy(): void {

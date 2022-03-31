@@ -14,7 +14,7 @@
                     {{ note.discription }}
                 </mat-card-subtitle>
                 <mat-card-content class="matcardicons">
-                    <app-icons [notedata]="note" (trashNoteToRefresh)="trash($event)" (archiveNoteToRefresh)="archive($event)"
+                    <app-icons [notedata]="note" [colourdata]="colourdata" (trashNoteToRefresh)="trash($event)" (archiveNoteToRefresh)="archive($event)"
                     (changeColorOfNote)="message($event)"></app-icons>
                 </mat-card-content>
             </mat-card>

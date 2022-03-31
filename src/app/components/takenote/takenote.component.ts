@@ -9,7 +9,6 @@ import { NoteservicesService } from 'src/app/services/Noteservices/noteservices.
 export class TakenoteComponent implements OnInit {
   createForm!: FormGroup;
   writenote: boolean = false;
-
   constructor(private formBuilder: FormBuilder, private noteservice: NoteservicesService) { }
 
   ngOnInit(): void {
@@ -22,7 +21,7 @@ export class TakenoteComponent implements OnInit {
 
   takeanote() {
     console.log(this.writenote);
-    return this.writenote === true ? (this.writenote = false) : (this.writenote = true);
+    return this.writenote === true ? (this.writenote = false) : (this.writenote = true); 
   }
   onSubmit() {
     this.writenote = false;
@@ -34,7 +33,7 @@ export class TakenoteComponent implements OnInit {
         title: this.createForm.value.title,
         discription: this.createForm.value.discription
       }
-      this.noteservice.takenote(payload).subscribe((response: any) => {
+      this.noteservice.takenote(payload).subscribe((response: any) => { //subcribe is used for take values from serives and also for connects to observables.
         console.log(response);
       })
       window.location.reload();
