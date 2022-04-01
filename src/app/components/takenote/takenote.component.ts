@@ -16,7 +16,7 @@ export class TakenoteComponent implements OnInit {
       title: ['', Validators.required],
       discription: ['', Validators.required]
 
-    });
+    }); // html to ts to service to http to backemd 
   }
 
   takeanote() {

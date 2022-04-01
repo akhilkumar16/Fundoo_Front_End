@@ -7,8 +7,6 @@ import { HttpService } from '../httpservices/http.service';
 export class CollabService {
   token: any
   noteid:any
-  collabEmail:any
-
   constructor(private httpservice:HttpService) {
     this.token = localStorage.getItem('token')
     this.getusers();
@@ -33,9 +31,15 @@ export class CollabService {
 
   create(notedata:any,email:any){
     let data = {
-      noteid:notedata.noteId,
-      collabEmail:email
+      noteId:notedata,
+      collEmail:email
     }
+    console.log(data);
+    
     return this.httpservice.postService('Collaborator/Create', data, true, this.getheader())
+  }
+  getlistofcolab(noteId:any){
+    let url = 'Collaborator/GetById?NoteId='+ noteId;
+    return this.httpservice.getService(url,true,this.getheader())
   }
 }

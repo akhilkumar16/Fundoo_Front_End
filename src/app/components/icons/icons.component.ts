@@ -57,7 +57,6 @@ export class IconsComponent implements OnInit {
     notedata = this.notedata
     let dialogRef = this.dialog.open(CollaboratorComponent, { data: notedata });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
     })
 }
 }
